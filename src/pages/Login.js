@@ -5,7 +5,7 @@ import { auth } from '../Firebase/auth'
 import DarkLogo from '../images/logo-dark.png'
 import LightLogo from '../images/logo-light.png'
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
     const navigate = useNavigate()

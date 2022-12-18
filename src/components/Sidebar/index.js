@@ -1,12 +1,19 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import logo from "../../images/logo.svg"
 import avtar1 from "../../images/users/avatar-1.jpg"
 
 const Sidebar = () => {
+  const navigate = useNavigate()
+  const handleLogout = () => {
+    localStorage.clear()
+    navigate("/", { replace: true })
+  }
   return (
     <>
       <div className="side-menu flex-lg-column me-lg-1 ms-lg-0">
+      
         {/* LOGO */}
         <div className="navbar-brand-box">
           <a href="index.html" className="logo logo-dark">
@@ -78,7 +85,10 @@ const Sidebar = () => {
                 <a className="dropdown-item" href="#">Profile <i className="ri-profile-line float-end text-muted" /></a>
                 <a className="dropdown-item" href="#">Setting <i className="ri-settings-3-line float-end text-muted" /></a>
                 <div className="dropdown-divider" />
-                <Link className="dropdown-item" to="/">Log out <i className="ri-logout-circle-r-line float-end text-muted" /></Link>
+                {/* <Link className="dropdown-item" to="/">Log out <i className="ri-logout-circle-r-line float-end text-muted" /></Link> */}
+                <button type='button' className="dropdown-item" onClick={handleLogout}>
+                  Log out <i className="ri-logout-circle-r-line float-end text-muted" />
+                </button>
               </div>
             </li>
           </ul>
