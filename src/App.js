@@ -17,8 +17,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<CompositeComponent />} >
-        {/* <Route path="/main" element={<Main />} >
-        </Route> */}
         <Route path='/profile' element={<Profile />} />
         <Route path='/chat' element={<Chat />}>
           <Route path='/chat/message' element={<MessageBox />} />

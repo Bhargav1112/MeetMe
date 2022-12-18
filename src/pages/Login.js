@@ -17,7 +17,7 @@ const Login = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 localStorage.setItem("userInfo", JSON.stringify(user))
-                navigate('/main/chat')
+                navigate('/chat')
             })
             .catch((error) => {
                 toast.error('Please Enter valid Credencial !')
